@@ -10,4 +10,6 @@ this is for making your own node js database.
 
 # how to use
 
-this is developing...
+```
+'npm run create-table --prefix ./node_modules/mydatabase _table-name_'
+```
