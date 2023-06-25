@@ -1,0 +1,24 @@
+{
+  "name": "mydatabase",
+  "version": "1.0.0",
+  "description": "create your local js database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node ./scripts/postinstall.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intConvict/mydatabase.git"
+  },
+  "keywords": [
+    "database"
+  ],
+  "author": "UsedCon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/intConvict/mydatabase/issues"
+  },
+  "homepage": "https://github.com/intConvict/mydatabase#readme"
+}
+
