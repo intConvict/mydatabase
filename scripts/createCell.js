@@ -3,10 +3,15 @@ const path = require('path');
 
 // Directory path for the database folder
 const packageDirectory = path.join(__dirname, '..', 'database');
+const scriptDirectory = path.join(__dirname, '..', 'scripts', 'tables');
 
 // Check if the databases folder exists, create it if not
 if (!fs.existsSync(packageDirectory)) {
   fs.mkdirSync(packageDirectory);
+}
+
+if (!fs.existsSync(scriptDirectory)) {
+  fs.mkdirSync(scriptDirectory);
 }
 
 // Process command line arguments
@@ -20,6 +25,7 @@ if (!tableName) {
 
 //make table
 const tableFile = path.join(packageDirectory, `${tableName}.mydb`);
+const tableFileScript = path.join( scriptDirectory,`${tableName}.js`);
 
 // Check if the table file already exists
 if (fs.existsSync(tableFile)) {
@@ -34,4 +40,7 @@ fs.writeFile(tableFile, '', (err) => {
     process.exit(1);
   }
   console.log(`${tableName} was successfully created.`);
+});
+
+fs.writeFile(tableFileScript, '', () => {
 });

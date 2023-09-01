@@ -10,6 +10,7 @@ this is for making your own node js database.
 
 # how to use
 
+create your cell like this:
 ```
-'npm run create-table --prefix ./node_modules/mydatabase _table-name_'
+'npm run create-cell --prefix ./node_modules/mydatabase "cell-name_"'
 ```
