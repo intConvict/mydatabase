@@ -12,5 +12,5 @@ this is for making your own node js database.
 
 create your cell like this:
 ```
-'npm run create-cell --prefix ./node_modules/mydatabase "cell-name_"'
+'npm run create-cell --prefix ./node_modules/mydatabase cell-name_'
 ```
