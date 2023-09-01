@@ -1,6 +1,6 @@
 # what is this about?
 
-this is for making your own node js database.
+this is for making your own node based local database.
 
 # installing
 
