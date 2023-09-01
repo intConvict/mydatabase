@@ -3,7 +3,7 @@ const path = require('path');
 
 // Directory path for the database folder
 const packageDirectory = path.join(__dirname, '..', 'database');
-const scriptDirectory = path.join(__dirname, '..', 'scripts', 'tables');
+const scriptDirectory = path.join(__dirname, '..', 'scripts', 'cells');
 
 // Check if the databases folder exists, create it if not
 if (!fs.existsSync(packageDirectory)) {
@@ -15,32 +15,31 @@ if (!fs.existsSync(scriptDirectory)) {
 }
 
 // Process command line arguments
-const tableName = process.argv[2];
+const cellName = process.argv[2];
 
 // Check if a table name is provided
-if (!tableName) {
+if (!cellName) {
   console.error('Please provide a table name.');
   process.exit(1);
 }
 
 //make table
-const tableFile = path.join(packageDirectory, `${tableName}.mydb`);
-const tableFileScript = path.join( scriptDirectory,`${tableName}.js`);
+const cellFile = path.join(packageDirectory, `${cellName}.mydb`);
 
 // Check if the table file already exists
-if (fs.existsSync(tableFile)) {
-  console.error(`${tableName} already exists.`);
+if (fs.existsSync(cellFile)) {
+  console.error(`${cellName} already exists.`);
   process.exit(1);
 }
 
 // Create the table file
-fs.writeFile(tableFile, '', (err) => {
+fs.writeFile(cellFile, '', (err) => {
   if (err) {
-    console.error(`Error creating the table: ${err}`);
+    console.error(`Error creating the cell: ${err}`);
     process.exit(1);
   }
-  console.log(`${tableName} was successfully created.`);
-});
-
-fs.writeFile(tableFileScript, '', () => {
+  //add id key
+  const keyValuePair = 'id:1';
+  fs.appendFileSync(cellFile, keyValuePair);
+  console.log(`${cellName} was successfully created.`);
 });
