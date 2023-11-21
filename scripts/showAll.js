@@ -10,7 +10,10 @@ fs.readdir(dbFolderPath, (err, files) => {
     return;
   }
   
-  const cellNames = files.map(file => file.replace('.mydb', ''));
+  const cellNames = files
+    .filter(file => file.endsWith('.mydb'))
+    .map(file => file.replace('.mydb', ''));
+    
   if(cellNames.length > 0){
     console.log('You have these cells:', cellNames);
   } else {
