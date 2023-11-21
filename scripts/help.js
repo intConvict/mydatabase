@@ -1,0 +1,1 @@
+console.log('These are all usable commands:\n\ndb-start\ndb-destroy\ndb-wipe\n\nshow-all\n\ncell-create\ncell-destroy\ncell-show\ncell-fill\n\nrow-add\nrow-remove\n\nkey-add\nkey-remove\n\nvalue-set\nvalue-remove\n')

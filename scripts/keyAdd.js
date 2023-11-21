@@ -27,7 +27,7 @@ else if (!keyName) {
 }
 else {
   // Read the contents of the file
-  const fileContent = fs.readFileSync(dbFilePath, 'utf8');
+  var fileContent = fs.readFileSync(dbFilePath, 'utf8');
 
   // Check if the key name already exists
   if (fileContent.includes(`${keyName}:`)) {
@@ -36,6 +36,16 @@ else {
   else {
     //keyname is available
     const keyValuePair = fileContent ? `,\n${keyName}:` : `${keyName}:`;
+
+    // Find every '|' character in the fileContent
+    const pipeCharacters = fileContent.match(/\|/g);
+
+    if (pipeCharacters) {
+      fileContent = fileContent.replace(/\n\|/g, `${keyValuePair}\n|`);
+      // Write the modified content back to the file
+      fs.writeFileSync(dbFilePath, fileContent, 'utf8');
+    }
+  
     fs.appendFileSync(dbFilePath, keyValuePair);
     console.log('Key added!');
   }

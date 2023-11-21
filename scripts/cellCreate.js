@@ -4,6 +4,8 @@ const path = require('path');
 // Directory path for the database folder
 const packageDirectory = path.join(__dirname, '..', 'database');
 const scriptDirectory = path.join(__dirname, '..', 'scripts', 'cells');
+// Process command line arguments
+const cellName = process.argv[2];
 
 // Check if the databases folder exists, create it if not
 if (!fs.existsSync(packageDirectory)) {
@@ -14,8 +16,6 @@ if (!fs.existsSync(scriptDirectory)) {
   fs.mkdirSync(scriptDirectory);
 }
 
-// Process command line arguments
-const cellName = process.argv[2];
 
 // Check if a table name is provided
 if (!cellName) {

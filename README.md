@@ -1,6 +1,6 @@
 # what is this about?
 
-this is for making your own node based local database.
+this is for making your very own npm based local database.
 
 # installing
 
@@ -10,7 +10,7 @@ this is for making your own node based local database.
 
 # how to use
 
-create your cell like this:
+If you want to now your commands run:
 ```
-'npm run create-cell --prefix ./node_modules/mydatabase cell-name_'
+'npm run help --prefix ./node_modules/mydatabase'
 ```
